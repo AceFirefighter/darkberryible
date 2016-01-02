@@ -1,8 +1,4 @@
 ---
-- name: Disable remote root login
-  lineinfile: dest=/etc/ssh/sshd_config regexp="^#?PermitRootLogin" line="PermitRootLogin no"
-  notify: restart sshd
-
 - name: Enable deb-src list
   lineinfile: dest=/etc/apt/sources.list
               regexp='^deb-src'
