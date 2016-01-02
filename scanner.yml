@@ -1,0 +1,23 @@
+---
+- hosts: scanner
+  vars: 
+    mountpoint: 
+    password: 
+    server: audio9.broadcastify.com
+    port: 80
+    homedirectory: /home/pi
+  user: root
+  roles:
+    - pi
+    - scanner
+  remote_user: pi
+  sudo: yes
+
+  handlers:
+    - name: reboot 
+      command: /sbin/reboot now
+      sudo: True
+
+    - name: restart sshd
+      service: name=ssh state=restarted
+      sudo: True
