@@ -3,9 +3,6 @@ Setup Broadcastify streaming on a RaspberryPi running Darkice using Ansible
 
 Tested on the Raspberry-pi B version 1 & 2 using Jessie-lite
 
-# Credit
-I compiled a lot of this from bits and pieces of other work. I will be adding thier credits here when I sort out my sources.
-
 ## Prerequisites
 
 Prior to using this you will need a Raspberry-pi that is network accessable.
@@ -52,7 +49,7 @@ Place your feed variables into `scanner.yml`
 
 # Running locally on the Raspberry-pi
 
-    vi hosts
+    vim hosts
     
     [scanner]
     127.0.0.1
