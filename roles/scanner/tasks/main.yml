@@ -34,6 +34,7 @@
       - libmp4v2-dev 
       - libshout3-dev 
       - libmp3lame-dev
+      - libopus-dev
   sudo: True
   notify: 
     - reboot
@@ -43,7 +44,7 @@
   sudo: True
 
 - name: Move Darkice
-  command: mv {{ homedirectory }}/darkice-1.0 /root/darkice
+  command: mv {{ homedirectory }}/darkice-1.3 /root/darkice
 
 - name: Copy Rules File
   copy: >
@@ -51,13 +52,13 @@
     dest=/root/darkice/debian/rules
 
 - name: create new version
-  raw: cd /root/darkice && debchange -v 1.0-999~mp3+1 'increment and add mp3 support'
+  raw: cd /root/darkice && debchange -v 1.3-999~mp3+1 'increment and add mp3 support'
 
 - name: Package new version of Darkice
   raw: cd /root/darkice && dpkg-buildpackage -rfakeroot -uc -b
 
 - name: Install Darkice
-  raw: dpkg -i /root/darkice_1.0-999~mp3+1_armhf.deb
+  raw: dpkg -i /root/darkice_1.3-999~mp3+1_armhf.deb
 
 - name: Copy darkice.cfg file
   template: src=darkice.cfg.js dest=/etc/darkice.cfg mode=u=rw,g=r,o=r

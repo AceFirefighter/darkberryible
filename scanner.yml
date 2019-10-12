@@ -3,7 +3,7 @@
   vars: 
     mountpoint: mountpoint
     password: password
-    server: audio9.jasonbrennan.com
+    server: audio9.broadcastify.com
     port: 80
     homedirectory: /home/pi
   roles:
