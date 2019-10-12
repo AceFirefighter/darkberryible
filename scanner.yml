@@ -1,12 +1,11 @@
 ---
 - hosts: scanner
   vars: 
-    mountpoint: 
-    password: 
-    server: audio9.broadcastify.com
+    mountpoint: mountpoint
+    password: password
+    server: audio9.jasonbrennan.com
     port: 80
     homedirectory: /home/pi
-  user: root
   roles:
     - pi
     - scanner
